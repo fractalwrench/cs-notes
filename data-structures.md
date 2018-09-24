@@ -4,16 +4,16 @@ A data structure is an organisation of values in a manner where they can be effi
 
 Different data structures are suited to solving different problems.
 
-- [Array](#Array)
-- [ArrayList](#ArrayList)
-- [LinkedList](#LinkedList)
-- [Stack](#Stack)
-- [Queue](#Queue)
-- [HashTable](#HashTable)
-- [Tree](#Tree)
-- [Trie](#Trie)
-- [Graph](#Graph)
-- [Heap](#Heap)
+- [Array](#array)
+- [ArrayList](#arraylist)
+- [LinkedList](#linkedlist)
+- [Stack](#stack)
+- [Queue](#queue)
+- [HashTable](#hashtable)
+- [Tree](#tree)
+- [Trie](#trie)
+- [Graph](#graph)
+- [Heap](#heap)
 
 <!-- TODO sample implementation of each type of structure, and explanation of their use -->
 
