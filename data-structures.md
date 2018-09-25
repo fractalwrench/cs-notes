@@ -14,12 +14,13 @@ Different data structures are suited to solving different problems.
 - [Trie](#trie)
 - [Graph](#graph)
 - [Heap](#heap)
+- [Set](#set)
 
 <!-- TODO sample implementation of each type of structure, and explanation of their use -->
 
 ## Array
 
-An array is a fixed-length data structure whose elements are next to each other in memory. Arrays are a very important concept, and are used to implement many other data structures, such as ArrayLists and HashTables. An array of integers in Java looks like this:
+An array is a fixed-length data structure whose elements are next to each other in memory. Arrays are a very important concept, and are used to implement many other data structures, such as ArrayLists and HashTables. An array of integers in Java looks like this:z
 
 ```
 int[] numbers = {2, 13, 8, 293, -8, 0};
@@ -65,6 +66,43 @@ If the data can be ordered, it may be possible to improve search from `O(n)` to 
 
 ## ArrayList
 
+An ArrayList is similar to an Array, but is capable of dynamically resizing itself to accommodate additional elements after initialisation.
+
+```
+List<String> words = new ArrayList<String>();
+words.add("London");
+words.add("Bath");
+
+System.out.println(words.get(1)); // prints "Bath"
+System.out.println(words.size()); // prints 2
+```
+
+This is possible because it is backed internally by an array, which has a default capacity of N elements. When there is not enough space to add an element, a new larger array is initialised and the existing values are copied over. This behaviour is encapsulated so that client code is unaware of when the backing array is changed:
+
+```
+// initial capacity of 2 elements
+List<String> words = new ArrayList<String>(2); // {null, null}
+numbers.add("cat"); // {"cat", null}
+numbers.add("dog"); // {"cat", "dog"}
+
+// values copied to new array that is twice the size
+numbers.add("chimp"); // {"cat", "dog", "chimp", null}
+```
+
+Typically, the new array is double the size of the previous one, although it's perfectly valid to use a different resizing factor.
+
+When an array does needs to be copied, this takes O(n) time as each element must be moved across. However, because this happens so rarely, the insertion time is amortised to O(1) on average.
+
+It is also worth noting that some implementations may copy values to a smaller array when elements are removed. This can allow additional memory to be reclaimed by the garbage collector.
+
+### Complexity
+
+| Access | Insertion Deletion | Search | Space |
+|:------:|:------------------:|:------:|:-----:|
+| `O(1)` | `O(1)`             | `O(n)` | `O(n)`|
+
+It is important to note that for insertion/deletion, the O(1) case is amortised.
+
 ## LinkedList
 
 ## Stack
@@ -80,3 +118,5 @@ If the data can be ordered, it may be possible to improve search from `O(n)` to 
 ## Graph
 
 ## Heap
+
+## Set
