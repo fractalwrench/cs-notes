@@ -20,7 +20,7 @@ Different data structures are suited to solving different problems.
 
 ## Array
 
-An array is a fixed-length data structure whose elements are next to each other in memory. Arrays are a very important concept, and are used to implement many other data structures, such as ArrayLists and HashTables. An array of integers in Java looks like this:z
+An array is a fixed-length data structure whose elements are next to each other in memory. Arrays are a very important concept, and are used to implement many other data structures, such as ArrayLists and HashTables. An array of integers in Java looks like this:
 
 ```
 int[] numbers = {2, 13, 8, 293, -8, 0};
@@ -105,6 +105,54 @@ It is important to note that for insertion/deletion, the O(1) case is amortised.
 
 ## LinkedList
 
+A LinkedList is formed of nodes which contain a data value, and a pointer to other nodes. For a singly linked list, each node points to the next node in the Collection.
+
+```
+[59] -> [9044] -> [-22] -> [3]
+```
+
+A doubly-linked-list contains pointers to the next *and* previous node.
+
+One of the main benefits of a LinkedList is that it is possible to insert or delete elements at the head or tail in constant time. A trade-off is that the time taken to access individual elements is O(n), unlike the O(1) of an Array.
+
+A node within a LinkedList is very simple to implement in Java:
+
+```
+class Node {
+    String data;
+    Node next; // points to the next node in the list
+}
+
+// create a simple linkedlist with 2 elements
+Node head = new Node();
+head.data = "first node";
+
+Node another = new Node();
+another.data = "second node";
+head.next = another; // forms a linked list
+```
+
+When working with LinkedLists, be very careful to account for the head/tail nodes. Some common mistakes include:
+
+- Forgetting that the next value for head/tail nodes can be null
+- Neglecting to remove references when removing nodes
+
+### Common Tricks
+
+#### Runner technique
+
+In the runner technique, two iterators 'run' through the LinkedList simultaneously. One runner is faster than the other, usually by a factor of two. This has the useful property that the pointers will simultaneously reach the midpoint and end of the list.
+
+#### Recursion
+
+LinkedList problems can commonly be solved with recursion.
+
+### Complexity
+
+| Access | Insertion Deletion | Search | Space |
+|:------:|:------------------:|:------:|:-----:|
+| `O(n)` | `O(1)`             | `O(n)` | `O(n)`|
+
 ## Stack
 
 ## Queue
@@ -119,4 +167,4 @@ It is important to note that for insertion/deletion, the O(1) case is amortised.
 
 ## Heap
 
-## Set
+## Se
