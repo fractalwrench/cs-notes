@@ -155,7 +155,51 @@ LinkedList problems can commonly be solved with recursion.
 
 ## Stack
 
+In a Stack, the last element in is the first element out (LIFO). The structure can be visualised as a 'stack' of plates, where the last one added remains on top of the other.
+
+```
+Stack<String> stack = new Stack<>();
+stack.push("dog");
+stack.push("bird");
+stack.push("cat");
+stack.pop(); // removes 'cat' from the stack
+stack.pop(); // removes 'bird' from the stack
+```
+
+Stacks can be very useful for storing temporary data that is likely to be removed soon, due to their constant time insertion/deletion.
+
+It is also worth noting that recursive algorithms can be implemented iteratively using Stacks, which may reduce worst case memory use.
+
+### Complexity
+
+| Access | Insertion Deletion | Search | Space |
+|:------:|:------------------:|:------:|:-----:|
+| `O(n)` | `O(1)`             | `O(n)` | `O(n)`|
+
 ## Queue
+
+In a Queue, the first element in is the first element out (FIFO). The structure can be visualised as a 'queue' at a bank, where individuals line up in order of arrival.
+
+```
+Queue<String> queue = new LinkedList<>();
+queue.add("first");
+queue.add("second");
+queue.add("third");
+
+queue.poll(); // polls 'first' (returns null if empty)
+queue.remove(); // removes 'second'
+```
+
+A queue is very similar to a LinkedList, but must have items added to one side and removed from another.
+
+Queues can be very useful when data must be processed in a sequential order, such as responding to messages on an HTTP endpoint. They are also very useful for implementing Breadth-First Search.
+
+### Complexity
+
+| Access | Insertion Deletion | Search | Space |
+|:------:|:------------------:|:------:|:-----:|
+| `O(n)` | `O(1)`             | `O(n)` | `O(n)`|
+
 
 ## HashTable
 
@@ -167,4 +211,4 @@ LinkedList problems can commonly be solved with recursion.
 
 ## Heap
 
-## Se
+## Set
